@@ -1,0 +1,67 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Nutrition" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/startblue</item>
+        <item name="colorPrimaryVariant">@color/startblue</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/startblue</item>
+        <item name="colorPrimaryDark">@color/startblue</item>
+        <item name="colorAccent">@color/startblue</item>
+    </style>
+    <style name="AppThemes" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/startblue</item>
+        <item name="colorPrimaryDark">@color/startblue</item>
+        <item name="colorAccent">@color/startblue</item>
+    </style>
+
+    <style name="headerText">
+        <item name="android:textSize">@dimen/headerTextSize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+    <style name="headerTextPrimary">
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="linearParent">
+        <item name="android:orientation">vertical</item>
+    </style>
+    <style name="loginButton">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@drawable/login_button_bk</item>
+    </style>
+    <style name="parent">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+    <style name="viewParent">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="loginCard">
+    </style>
+    <style name="loginParent">
+        <item name="android:background">@color/loginBkColor</item>
+        <item name="android:focusableInTouchMode">true</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+    <style name="modifiedEditText">
+        <item name="android:textSize">@dimen/newsMoreTextSize</item>
+        <item name="android:backgroundTint">#ffff</item>
+    </style>
+</resources>

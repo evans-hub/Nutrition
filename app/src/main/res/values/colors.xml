@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#06aba5</color>
+    <color name="colorPrimaryDark">#06aba5</color>
+    <color name="colorAccent">#928B8E</color>
+    <color name="white">#ffff</color>
+    <color name="black">#000</color>
+    <color name="Native">#FAFAFA</color>
+    <color name="loginBkColor">#f0f0f0</color>
+    <color name="teal_200">#ff03dac5</color>
+    <color name="startblue">#06aba5</color>
+    <color name="teal_700">#ff018786</color>
+</resources>

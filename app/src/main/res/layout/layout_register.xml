@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/loginCard"
+    android:layout_gravity="center"
+    android:layout_marginTop="10dp"
+    android:layout_marginBottom="@dimen/loginViewsMargin"
+    android:background="@color/white"
+    android:elevation="5dp"
+    app:cardCornerRadius="@dimen/loginCardRadius"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        style="@style/linearParent"
+        android:layout_gravity="center"
+        android:padding="@dimen/loginViewsMargin"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/headerTextPrimary"
+            android:layout_marginTop="3dp"
+            android:text="Register"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+
+            <EditText
+                android:id="@+id/layout_id_number"
+                style="@style/modifiedEditText"
+                android:hint="Id Number"
+                android:inputType="number"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+
+            <EditText
+                android:id="@+id/layout_name"
+                style="@style/modifiedEditText"
+                android:hint="Name"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+
+            <EditText
+                android:id="@+id/layout_mobile_Number"
+                style="@style/modifiedEditText"
+                android:hint="Phone Number"
+                android:inputType="number"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+
+            <EditText
+                android:id="@+id/layout_county"
+                style="@style/modifiedEditText"
+                android:hint="Residential county"
+                android:inputType="text"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+
+            <EditText
+                android:id="@+id/layout_email"
+                style="@style/modifiedEditText"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/parent"
+            android:layout_marginTop="@dimen/signup_text_margin_top">
+
+            <EditText
+                android:id="@+id/layout_password"
+                style="@style/modifiedEditText"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLines="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/register"
+            style="@style/loginButton"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:text="Register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/signinInRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sign In"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="end"
+            android:gravity="end"
+            android:textColor="@color/black"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
