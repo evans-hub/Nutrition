@@ -1,11 +1,12 @@
-package com.example.nutrition.Utils;
+package com.example.nutrition.Service;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -18,7 +19,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.nutrition.MainActivity;
 import com.example.nutrition.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -31,7 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.HashMap;
 
 public class Profile extends AppCompatActivity {
-    TextView phone, email, name, number, editing;
+    TextView  email, name,editing,phone,age,height,weight,gender,status,disease;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Button logout;
@@ -46,28 +46,32 @@ public class Profile extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         mAuth=FirebaseAuth.getInstance();
-        phone = findViewById(R.id.profile_phonenumber);
         email = findViewById(R.id.profile_emailaddress);
         name = findViewById(R.id.profile_name);
-        number = findViewById(R.id.profile_ktdanumber);
-        logout = findViewById(R.id.logoutuser);
         editing = findViewById(R.id.edit_profile);
+        phone=findViewById(R.id.profile_phone);
+        age=findViewById(R.id.layout_age);
+        height=findViewById(R.id.layout_height);
+        weight=findViewById(R.id.layout_weight);
+        gender=findViewById(R.id.layout_gender);
+        status=findViewById(R.id.status);
+        disease=findViewById(R.id.profile_disease);
         loading = new ProgressDialog(this);
         loading.getWindow().setGravity(Gravity.CENTER_HORIZONTAL);
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("users");
+        if (mAuth.getCurrentUser() == null) {
+            Intent intent=new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+            finish();
+
+        }
         editing.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                editing();
-            }
-        });
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent a = new Intent(getApplicationContext(), LoginActivity.class);
-                startActivity(a);
+                Intent intent=new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
                 finish();
             }
         });
@@ -106,58 +110,7 @@ public class Profile extends AppCompatActivity {
 
     }
 
-    private void editing() {
-        setContentView(R.layout.update);
-        Button update = findViewById(R.id.updatess);
-        EditText names = findViewById(R.id.update_name);
-        EditText collections = findViewById(R.id.update_collection);
-        EditText phones = findViewById(R.id.update_mobile_Number);
-        ImageView profile = findViewById(R.id.edit_profile_image);
-        ImageView dp=findViewById(R.id.edit_profile_image);
-        SharedPreferences shd = getSharedPreferences("pref", MODE_PRIVATE);
-        String nam = shd.getString("name", "");
-        String phon = shd.getString("phone", "");
-        String colle = shd.getString("location", "");
-        names.setText(nam);
-        collections.setText(colle);
-        phones.setText(phon);
-        profile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setType("image/*");
-                intent.setAction(Intent.ACTION_GET_CONTENT);
-                startActivityForResult(Intent.createChooser(intent, "Please Select Image"), PICK_IMAGE_REQUEST);
-            }
-        });
 
-        update.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                String name = names.getText().toString().trim();
-                String phone = phones.getText().toString().trim();
-                if (name.isEmpty() || name.length() < 2) {
-                    names.setError("invalid name");
-                }
-                if (phone.length() != 10 || phone.isEmpty()) {
-                    phones.setError("invalid phone number");
-
-                } else {
-                    final HashMap<String, Object> map = new HashMap<>();
-                    map.put("name", name);
-                    map.put("phone", phone);
-                    databaseReference.child(mAuth.getCurrentUser().getUid()).updateChildren(map);
-                    loading.dismiss();
-                    Intent intent = new Intent(getApplicationContext(), Profile.class);
-                    startActivity(intent);
-                    finish();
-
-
-                }
-            }
-        });
-    }
 
 
     @Override
@@ -182,15 +135,24 @@ public class Profile extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot != null) {
                     loading.dismiss();
-                    String emaill = snapshot.child("email").getValue(String.class);
+                    String email_address = snapshot.child("email").getValue(String.class);
                     String naming = snapshot.child("name").getValue(String.class);
-                    String phonenumber = snapshot.child("phone").getValue(String.class);
+                    String phone_number = snapshot.child("phone").getValue(String.class);
                     String id = snapshot.child("number").getValue(String.class);
+                    String ages = snapshot.child("age").getValue(String.class);
+                    String genders = snapshot.child("gender").getValue(String.class);
+                    String heights = snapshot.child("height").getValue(String.class);
+                    String weights = snapshot.child("weight").getValue(String.class);
+                    String diseasess = snapshot.child("diseases").getValue(String.class);
 
-                    email.setText(emaill);
+                    email.setText(email_address);
                     name.setText(naming);
-                    phone.setText(phonenumber);
-                    number.setText(id);
+                    phone.setText(phone_number);
+                    height.setText(heights);
+                    gender.setText(genders);
+                    weight.setText(weights);
+                    disease.setText(diseasess);
+                    age.setText(ages);
 
                 }
             }

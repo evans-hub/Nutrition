@@ -65,20 +65,7 @@
                 android:maxLines="1"
                 android:hint="Phone Number"/>
         </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/parent"
-            android:layout_marginTop="@dimen/signup_text_margin_top">
-            <EditText
-                android:id="@+id/update_collection"
-                style="@style/modifiedEditText"
-                android:inputType="text"
-                android:maxLines="1"
-                android:hint="Collection centre"/>
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <Button
+          <Button
             style="@style/loginButton"
             android:layout_gravity="center"
             android:text="Update"

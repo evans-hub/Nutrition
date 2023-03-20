@@ -1,4 +1,4 @@
-package com.example.nutrition.Utils;
+package com.example.nutrition.Service;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -17,7 +17,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.nutrition.Entity.User;
-import com.example.nutrition.MainActivity;
 import com.example.nutrition.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -32,6 +31,11 @@ public class SignUpActivity extends AppCompatActivity {
     private EditText names;
     private EditText idnumber;
     private EditText passwords;
+    private EditText heig;
+    private EditText ag;
+    private EditText dis;
+    private EditText wei;
+    private EditText gen;
     private FirebaseAuth mAuth;
     ProgressDialog loading;
     private TextView login;
@@ -54,6 +58,7 @@ public class SignUpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(SignUpActivity.this, LoginActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
 
@@ -63,6 +68,11 @@ public class SignUpActivity extends AppCompatActivity {
         passwords = findViewById(R.id.layout_password);
         email_address = findViewById(R.id.layout_email);
         idnumber=findViewById(R.id.layout_id_number);
+        gen=findViewById(R.id.layout_gender);
+        ag=findViewById(R.id.layout_age);
+        heig=findViewById(R.id.layout_height);
+        dis=findViewById(R.id.layout_diseases);
+        wei=findViewById(R.id.layout_weight);
 
         if (Build.VERSION.SDK_INT >= 21) {
             Window window = this.getWindow();
@@ -77,17 +87,34 @@ public class SignUpActivity extends AppCompatActivity {
         loading.setTitle("Signing Up");
         loading.setMessage("Please wait...");
         loading.setCanceledOnTouchOutside(false);
-        String email, password, phone, name, number;
+        String email, password, phone, name, number,height,age,weight,diseases,gender;
         email = email_address.getText().toString().trim();
         password = passwords.getText().toString().trim();
         phone = phones.getText().toString().trim();
         name = names.getText().toString().trim();
         number=idnumber.getText().toString().trim();
-        if (name.isEmpty() || name.length() < 2) {
+        height=heig.getText().toString().trim();
+        age=ag.getText().toString().trim();
+        weight=wei.getText().toString().trim();
+        diseases=dis.getText().toString().trim();
+        gender=gen.getText().toString().trim();
+        if (name.isEmpty()) {
             names.setError("invalid name");
         }
-        if (number.isEmpty() || number.length() < 7) {
-            names.setError("invalid Id number");
+        if (height.isEmpty()) {
+            heig.setError("invalid height");
+        }
+        if (weight.isEmpty()) {
+            wei.setError("invalid weight");
+        }
+        if (age.isEmpty()) {
+            ag.setError("invalid age");
+        }
+        if (gender.isEmpty()) {
+            gen.setError("invalid gender");
+        }
+        if (number.isEmpty()) {
+            idnumber.setError("invalid Id number");
         }
         if (password.isEmpty() || password.length() < 6) {
             passwords.setError("6 Characters and More Required");
@@ -110,7 +137,7 @@ public class SignUpActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         String uuid = FirebaseAuth.getInstance().getCurrentUser()
                                 .getUid();
-                        User user = new User(number, name, phone,email, uuid);
+                        User user = new User(number, name, phone,email, uuid,height,weight,gender,diseases,age);
 
                         FirebaseDatabase.getInstance().getReference("users").child(uuid)
                                 .setValue(user)

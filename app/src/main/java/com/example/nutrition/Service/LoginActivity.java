@@ -1,11 +1,10 @@
-package com.example.nutrition.Utils;
+package com.example.nutrition.Service;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
@@ -17,17 +16,13 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.nutrition.MainActivity;
 import com.example.nutrition.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     private Button login;
@@ -35,8 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     private EditText passwords;
     private FirebaseAuth mAuth;
     private TextView forgot, signup;
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
     ProgressDialog loading;
     CheckBox checkBox;
 
@@ -88,6 +81,7 @@ public class LoginActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(LoginActivity.this, SignUpActivity.class);
                 startActivity(intent);
+                finish();
             }
         });
         if (Build.VERSION.SDK_INT >= 21) {

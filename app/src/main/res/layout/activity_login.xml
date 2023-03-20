@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Utils.LoginActivity">
+    tools:context=".Service.LoginActivity">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -28,7 +28,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="270dp"
                         android:background="@drawable/ic_login_bk"
-                        android:contentDescription="login background" />
+                        android:contentDescription="login background" >
+
+                    </ImageView>
+
                 </LinearLayout>
             </LinearLayout>
             <LinearLayout
@@ -36,7 +39,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="130dp"
+                android:layout_marginTop="170dp"
                 android:layout_marginRight="30dp"
                 android:orientation="vertical">
 

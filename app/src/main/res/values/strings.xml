@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Nutrition</string>
     <string name="contact_form">Contact Us</string>
-    <string name="contact_form_name">Your Name</string>
+    <string name="contact_form_name">Your Name(optional)</string>
     <string name="contact_form_email">Your Email</string>
     <string name="contact_form_subject">Subject</string>
     <string name="contact_form_message">Message</string>
