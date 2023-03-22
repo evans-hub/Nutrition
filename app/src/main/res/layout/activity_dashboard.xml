@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Service.Dashboard">
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="hinting"
+        android:textSize="24sp"
+        android:textColor="@color/black"
+        android:id="@+id/input_symptoms_edittext"
+        android:layout_marginBottom="50dp"
+        />
+
+    <TextView
+        android:id="@+id/matching_diseases_textview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="example"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        />
+    <Button
+        android:id="@+id/submit_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Submit"
+        android:background="@drawable/login_button_bk"
+        android:layout_marginHorizontal="50dp"
+        android:layout_marginTop="300dp"
+        />
+
+
+</LinearLayout>
