@@ -13,6 +13,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -39,6 +40,8 @@ public class Recommendation extends AppCompatActivity {
     RecyclerView categories;
     String diseases,person;
     TextView name,lay;
+    ImageView s;
+    TextView t;
 
     @Override
     protected void onStart() {
@@ -55,6 +58,8 @@ public class Recommendation extends AppCompatActivity {
         loading=new ProgressDialog(this);
         categories=findViewById(R.id.recycler_reco);
         lay=findViewById(R.id.layouts);
+        s=findViewById(R.id.simage);
+        t=findViewById(R.id.stext);
         TextView tt=findViewById(R.id.view);
 
         categories.setHasFixedSize(true);
@@ -121,7 +126,21 @@ public class Recommendation extends AppCompatActivity {
                 Toast.makeText(Recommendation.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });*/
+        s.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intt=new Intent(getApplicationContext(),Search.class);
+                startActivity(intt);
+            }
+        });
 
+        t.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intt=new Intent(getApplicationContext(),Search.class);
+                startActivity(intt);
+            }
+        });
         tt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

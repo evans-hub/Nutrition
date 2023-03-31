@@ -15,6 +15,13 @@
         android:theme="@style/Theme.Nutrition"
         tools:targetApi="31">
         <activity
+            android:name=".Service.Search"
+            android:exported="false">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".Service.AllActivity"
             android:exported="false">
             <meta-data
