@@ -49,6 +49,10 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.myViewHolder> 
                 intent.putExtra("title",model.getTitle());
                 intent.putExtra("file",model.getFile());
                 intent.putExtra("description",model.getDescription());
+                intent.putExtra("carbo",model.getCarbo());
+                intent.putExtra("protein",model.getProtein());
+                intent.putExtra("calories",model.getCalories());
+                intent.putExtra("fat",model.getFat());
                 context.startActivity(intent);
 
             }

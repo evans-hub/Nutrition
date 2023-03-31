@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Nutrition</string>
+    <string name="app_name">Lifesum</string>
     <string name="contact_form">Contact Us</string>
     <string name="contact_form_name">Your Name(optional)</string>
     <string name="contact_form_email">Your Email</string>

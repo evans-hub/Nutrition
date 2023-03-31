@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check all symptoms you have"
+        android:textColor="@color/startblue"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        />
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:paddingTop="20dp"
+    >
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="10dp"
+        >
+        <CheckBox
+            android:id="@+id/cough"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cough"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+        <CheckBox
+            android:id="@+id/headache"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Headache"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+        <CheckBox
+            android:id="@+id/abdominal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abdominal pain"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+        <CheckBox
+            android:id="@+id/fatigue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fatigue"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="20dp"
+        >
+        <CheckBox
+            android:id="@+id/Weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lose Weight"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+        <CheckBox
+            android:id="@+id/Blurry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Blurry Vision"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+        <CheckBox
+            android:id="@+id/sore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sore Throat"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+        <CheckBox
+            android:id="@+id/fever"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fever"
+            android:textColor="@color/black"
+            android:textStyle="normal"
+            android:layout_marginTop="10dp"
+            android:textSize="18sp"
+            android:padding="10dp"
+            />
+
+    </LinearLayout>
+</LinearLayout>
+
+</LinearLayout>

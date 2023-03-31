@@ -119,7 +119,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="height"
+                        android:text="height(cm)"
                         android:textSize="20sp"
                         />
                 </LinearLayout>
@@ -166,7 +166,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="weight"
+                        android:text="weight(lb)"
                         android:textSize="20sp"
                         />
                 </LinearLayout>
@@ -213,7 +213,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="age"
+                        android:text="age(yrs)"
                         android:textSize="20sp"
                         />
                 </LinearLayout>
@@ -253,6 +253,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="27.2"
+                        android:id="@+id/bmi"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         />

@@ -22,7 +22,7 @@ public class AboutUsActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
                     case R.id.action_home:
-                        Intent a = new Intent(getApplicationContext(), MainActivity.class);
+                        Intent a = new Intent(getApplicationContext(), Recommendation.class);
                         startActivity(a);
                         finish();
                         break;

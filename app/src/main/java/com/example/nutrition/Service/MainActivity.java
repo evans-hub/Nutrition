@@ -21,6 +21,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -28,7 +29,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
     FirebaseAuth mAuth;
     HomeAdapter hyp,dia,ul,cov,canc;
-    DatabaseReference references;
+    Query references;
     RecyclerView hyper,diab,ulcer,covi,cance;
     ArrayList<Home> listh, listd,listu,listco,listca;
     ProgressDialog loading;
@@ -105,7 +106,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         this.loading.show();
-        references= FirebaseDatabase.getInstance().getReference("food").child("diabetes");
+        references= FirebaseDatabase.getInstance().getReference("food").child("diabetes").limitToFirst(2);
         this.references.addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -121,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
-        references= FirebaseDatabase.getInstance().getReference("food").child("hypertension");
+        references= FirebaseDatabase.getInstance().getReference("food").child("hypertension").limitToFirst(2);
         this.references.addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -137,7 +138,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
-        references= FirebaseDatabase.getInstance().getReference("food").child("cancer");
+        references= FirebaseDatabase.getInstance().getReference("food").child("cancer").limitToFirst(2);
         this.references.addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -153,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
-        references= FirebaseDatabase.getInstance().getReference("food").child("ulcers");
+        references= FirebaseDatabase.getInstance().getReference("food").child("ulcers").limitToFirst(2);
         this.references.addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
@@ -169,7 +170,7 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, "Error", Toast.LENGTH_SHORT).show();
             }
         });
-        references= FirebaseDatabase.getInstance().getReference("food").child("covid");
+        references= FirebaseDatabase.getInstance().getReference("food").child("covid").limitToFirst(2);
         this.references.addValueEventListener(new ValueEventListener() {
             public void onDataChange(DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()) {

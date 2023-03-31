@@ -28,10 +28,12 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 import java.util.HashMap;
 
 public class Profile extends AppCompatActivity {
-    TextView  email, name,editing,phone,age,height,weight,gender,status,disease;
+    TextView  email, name,editing,phone,age,height,weight,gender,status,disease,bm;
     FirebaseDatabase firebaseDatabase;
     DatabaseReference databaseReference;
     Button logout;
@@ -55,6 +57,7 @@ public class Profile extends AppCompatActivity {
         weight=findViewById(R.id.layout_weight);
         gender=findViewById(R.id.layout_gender);
         status=findViewById(R.id.status);
+        bm=findViewById(R.id.bmi);
         disease=findViewById(R.id.profile_disease);
         loading = new ProgressDialog(this);
         loading.getWindow().setGravity(Gravity.CENTER_HORIZONTAL);
@@ -145,6 +148,7 @@ public class Profile extends AppCompatActivity {
                     String weights = snapshot.child("weight").getValue(String.class);
                     String diseasess = snapshot.child("diseases").getValue(String.class);
 
+
                     email.setText(email_address);
                     name.setText(naming);
                     phone.setText(phone_number);
@@ -153,6 +157,12 @@ public class Profile extends AppCompatActivity {
                     weight.setText(weights);
                     disease.setText(diseasess);
                     age.setText(ages);
+
+                    Double bmi_formula=(Double.parseDouble(weights)/(Double.parseDouble(heights)*Double.parseDouble(heights)))*703;
+
+                    DecimalFormat df = new DecimalFormat("#.##");
+                    String formattedNumber = df.format(bmi_formula);
+                    bm.setText(formattedNumber);
 
                 }
             }

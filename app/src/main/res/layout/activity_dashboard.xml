@@ -6,24 +6,182 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".Service.Dashboard">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Check all symptoms you have"
+        android:textColor="@color/startblue"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:textSize="24sp"
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingTop="20dp"
+        >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            >
+            <CheckBox
+                android:id="@+id/cough"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cough"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+            <CheckBox
+                android:id="@+id/headache"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Headache"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+            <CheckBox
+                android:id="@+id/abdominal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Abdominal pain"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+            <CheckBox
+                android:id="@+id/fatigue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fatigue"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="20dp"
+            >
+            <CheckBox
+                android:id="@+id/Weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lose Weight"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+            <CheckBox
+                android:id="@+id/Blurry"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Blurry Vision"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+            <CheckBox
+                android:id="@+id/sore"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sore Throat"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+            <CheckBox
+                android:id="@+id/fever"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fever"
+                android:textColor="@color/black"
+                android:textStyle="normal"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:padding="10dp"
+                />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="hinting"
+        android:hint="symptoms list"
         android:textSize="24sp"
         android:textColor="@color/black"
         android:id="@+id/input_symptoms_edittext"
-        android:layout_marginBottom="50dp"
+        android:layout_marginLeft="20dp"
+        android:visibility="gone"
+        android:layout_marginBottom="20dp"
         />
-
     <TextView
-        android:id="@+id/matching_diseases_textview"
+        android:id="@+id/desc"
+        android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="example"
-        android:textColor="@color/black"
+        android:text="Found this disease basing on your symptoms"
+        android:textColor="@color/startblue"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:visibility="gone"
         android:textSize="24sp"
         />
+    <FrameLayout
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginTop="40dp"
+        android:layout_gravity="center"
+        android:background="@drawable/circle_bg">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            style="@android:style/Widget.ProgressBar" />
+
+        <TextView
+            android:id="@+id/matching_diseases_textview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="Likely Disease"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
+
+    </FrameLayout>
+
+
     <Button
         android:id="@+id/submit_button"
         android:layout_width="match_parent"
@@ -31,8 +189,33 @@
         android:text="Submit"
         android:background="@drawable/login_button_bk"
         android:layout_marginHorizontal="50dp"
-        android:layout_marginTop="300dp"
+        android:layout_marginTop="30dp"
         />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+    <Button
+        android:id="@+id/proceed"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Cancel"
+        android:background="@drawable/cancel_btn"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="30dp"
+        android:visibility="gone"
+        android:backgroundTint="#FF0000"
+        />
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:text="Proceed"
+        android:visibility="gone"
+        android:background="@drawable/login_button_bk"
+        android:layout_marginHorizontal="10dp"
+        android:layout_marginTop="30dp"
 
-
+        />
+    </LinearLayout>
 </LinearLayout>

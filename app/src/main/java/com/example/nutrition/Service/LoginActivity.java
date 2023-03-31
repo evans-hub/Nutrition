@@ -21,8 +21,6 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 public class LoginActivity extends AppCompatActivity {
     private Button login;
@@ -46,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         loading = new ProgressDialog(this);
         checkBox = findViewById(R.id.remember_me);
         if (mAuth.getCurrentUser() != null) {
-            Intent intent=new Intent(LoginActivity.this, MainActivity.class);
+            Intent intent=new Intent(LoginActivity.this, Recommendation.class);
             startActivity(intent);
             finish();
 
@@ -119,7 +117,7 @@ public class LoginActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()){
                         loading.dismiss();
-                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                        Intent intent = new Intent(LoginActivity.this, Recommendation.class);
                         startActivity(intent);
                         finish();
                     }

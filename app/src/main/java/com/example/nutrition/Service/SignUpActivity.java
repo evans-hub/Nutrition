@@ -71,7 +71,6 @@ public class SignUpActivity extends AppCompatActivity {
         gen=findViewById(R.id.layout_gender);
         ag=findViewById(R.id.layout_age);
         heig=findViewById(R.id.layout_height);
-        dis=findViewById(R.id.layout_diseases);
         wei=findViewById(R.id.layout_weight);
 
         if (Build.VERSION.SDK_INT >= 21) {
@@ -96,7 +95,6 @@ public class SignUpActivity extends AppCompatActivity {
         height=heig.getText().toString().trim();
         age=ag.getText().toString().trim();
         weight=wei.getText().toString().trim();
-        diseases=dis.getText().toString().trim();
         gender=gen.getText().toString().trim();
         if (name.isEmpty()) {
             names.setError("invalid name");
@@ -137,6 +135,7 @@ public class SignUpActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
                         String uuid = FirebaseAuth.getInstance().getCurrentUser()
                                 .getUid();
+                        String diseases="";
                         User user = new User(number, name, phone,email, uuid,height,weight,gender,diseases,age);
 
                         FirebaseDatabase.getInstance().getReference("users").child(uuid)
@@ -146,7 +145,7 @@ public class SignUpActivity extends AppCompatActivity {
                                     public void onComplete(@NonNull Task<Void> task) {
                                         Intent intent
                                                 = new Intent(getApplicationContext(),
-                                                MainActivity.class);
+                                                Dashboard.class);
                                         startActivity(intent);
                                         finish();
                                     }

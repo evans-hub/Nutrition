@@ -50,6 +50,194 @@
                 android:layout_height="200dp"
                 android:id="@+id/picture"
                 android:src="@drawable/lg" />
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="5dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:paddingVertical="0dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/calories"
+                        android:layout_gravity="center"
+                        android:paddingRight="10dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="10dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="170 g"
+                            android:id="@+id/layout_calories"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="calories"
+                            android:textSize="20sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <TwoLineListItem
+                    android:layout_width="2dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="8dp"
+                    android:background="#F5F5FA"
+                    android:layout_marginLeft="190dp"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
+                    android:layout_gravity="end"
+                    android:gravity="center"
+                    android:paddingVertical="10dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/lipid"
+                        android:layout_gravity="center"
+                        android:paddingRight="10dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Fats"
+                            android:id="@+id/layout_fats"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="fats(grams"
+                            android:textSize="20sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_marginTop="2dp"
+                app:cardCornerRadius="10dp"
+                >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:gravity="center"
+                    android:paddingVertical="0dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="36dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/protein1"
+                        android:layout_gravity="center"
+                        android:paddingRight="10dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingHorizontal="5dp"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="34"
+                            android:id="@+id/layout_proteins"
+                            android:textColor="@color/black"
+                            android:textSize="24sp" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="proteins(grms)"
+                            android:textSize="20sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+                <TwoLineListItem
+                    android:layout_width="2dp"
+                    android:layout_height="60dp"
+                    android:background="#F5F5FA"
+                    android:layout_marginLeft="190dp"
+                    android:layout_marginTop="8dp"
+                    />
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingRight="10dp"
+                    android:layout_gravity="end"
+                    android:gravity="center"
+                    android:paddingVertical="10dp"
+                    android:orientation="horizontal">
+
+
+                    <ImageView
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/carb1"
+                        android:layout_gravity="center"
+                        android:paddingRight="0dp"
+
+                        />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="27.2"
+                            android:id="@+id/layout_carbo"
+                            android:textColor="@color/black"
+                            android:textSize="24sp"
+                            />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="carbo(grams)"
+                            android:textSize="20sp"
+                            />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
             <TextView
                 android:layout_width="match_parent"

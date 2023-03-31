@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.nutrition.Service.LoginActivity;
 import com.example.nutrition.Service.MainActivity;
+import com.example.nutrition.Service.Recommendation;
 import com.example.nutrition.Service.SignUpActivity;
 import com.google.firebase.auth.FirebaseAuth;
 
@@ -27,7 +28,7 @@ FirebaseAuth mAuth;
         signup=findViewById(R.id.signingup);
         mAuth=FirebaseAuth.getInstance();
         if (mAuth.getCurrentUser() != null) {
-            Intent intent=new Intent(getApplicationContext(), MainActivity.class);
+            Intent intent=new Intent(getApplicationContext(), Recommendation.class);
             startActivity(intent);
             finish();
 
