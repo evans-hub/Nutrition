@@ -19,6 +19,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.nutrition.Entity.Emails;
 import com.example.nutrition.Entity.User;
 import com.example.nutrition.Mail.JavaMailAPI;
 import com.example.nutrition.R;
@@ -99,7 +100,7 @@ public class ContactUsActivity extends AppCompatActivity {
    user_whatsapp.setOnClickListener(new View.OnClickListener() {
        @Override
        public void onClick(View v) {
-        String sNumber="+254789427421";
+        String sNumber="+254777816426";
         Uri uri= Uri.parse(String.format("https://api.whatsapp.com/send?phone=%s",sNumber));
         Intent intent=new Intent(Intent.ACTION_VIEW);
         intent.setData(uri);
@@ -165,7 +166,7 @@ user_linkedin.setOnClickListener(new View.OnClickListener() {
         javaMailAPI.execute();
         String uuid = FirebaseAuth.getInstance().getCurrentUser()
                 .getUid();
-        User user = new User(mEmail, mSubject, mMessage, uuid, mName);
+        Emails user = new Emails(mEmail, mSubject, mMessage, uuid, mName);
         reference.child(mAuth.getCurrentUser().getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
             public void onComplete(@NonNull Task<Void> task) {
