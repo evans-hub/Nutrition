@@ -42,7 +42,7 @@ public class Post extends AppCompatActivity {
         mSaveButton = findViewById(R.id.save_button);
 
         mDatabase = FirebaseDatabase.getInstance();
-        mDatabaseRef = mDatabase.getReference("food").child("cancer");
+        mDatabaseRef = mDatabase.getReference("food").child("covid");
 
         mSaveButton.setOnClickListener(new View.OnClickListener() {
             @Override

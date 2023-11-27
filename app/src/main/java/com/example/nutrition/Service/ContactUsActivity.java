@@ -120,7 +120,7 @@ public class ContactUsActivity extends AppCompatActivity {
 user_linkedin.setOnClickListener(new View.OnClickListener() {
     @Override
     public void onClick(View v) {
-        Uri uri = Uri.parse("https://www.linkedin.com/company/software-developer-group/");
+        Uri uri = Uri.parse("https://ke.linkedin.com/school/kca-university/");
         Intent intent = new Intent(Intent.ACTION_VIEW, uri);
         startActivity(intent);
     }

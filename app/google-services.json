@@ -1,36 +1,26 @@
 {
   "project_info": {
-    "project_number": "579534689401",
-    "project_id": "nutrition-6d5c1",
-    "storage_bucket": "nutrition-6d5c1.appspot.com"
+    "project_number": "357839352669",
+    "project_id": "lifesum-b4967",
+    "storage_bucket": "lifesum-b4967.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:579534689401:android:61de07e45531c43360f0a8",
+        "mobilesdk_app_id": "1:357839352669:android:8c4180cd50dc34b3076eb4",
         "android_client_info": {
           "package_name": "com.example.nutrition"
         }
       },
-      "oauth_client": [
-        {
-          "client_id": "579534689401-f945ggt0sddshqk0ve6olpm80bt2c92q.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
+      "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyD5IVjx8N0nvJSdjHah5BItNEiGxSYiT3g"
+          "current_key": "AIzaSyDo48SprWWfSDD2jmqPPskrGM8XGBo7kBM"
         }
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "579534689401-f945ggt0sddshqk0ve6olpm80bt2c92q.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
+          "other_platform_oauth_client": []
         }
       }
     }
